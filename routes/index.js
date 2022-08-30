@@ -89,10 +89,10 @@ router.get("/findmoviebyid", async (req, res) => {
 router.get("/allmovies", authFile.authenticationChecker, async (req, res) => {
   try {
     const data = await Movie.find({});
+    console.log(data);
     return res.send(data);
   } catch (error) {
     console.log(error);
-    return res.send(error);
   }
 });
 
